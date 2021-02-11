@@ -1,30 +1,51 @@
 @import "../../stylings/_colors.scss";
+@import "../../stylings/_fonts.scss";
 
 .headerContainer{
-    height: 93vh;
+    height: 100vh;
     background-image: url("../../assets/images/KDAcombined.jpeg");
     background-position: center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Public Sans Bold";
+    overflow: hidden;
+}
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    animation: 2s ease-out 0s fadeIn;
 }
 
+
+
+
 .searchCard{
-    background-color: $trackerGreyGlass;
+    background-color: $trackerTransluscent;
+    @-moz-document url-prefix() {
+        background-color: $trackerWhiteGlass !important;
+    }
+    border: 0.1vw solid $trackerWhite;
     width:40vw;
-    height:20vw;
-    border-radius: 1vw;
+    height:16vw;
     box-shadow: 0px 0px 9px $trackerShadow;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(8px);
+    animation: 1.1s ease-out 0s fadeInScaleIn;
+    position: relative;
+    z-index: 2;
 }
 
 .labelContainer{
     width: 100%;
     height: 40%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
 }
 
 
@@ -45,10 +66,67 @@
 }
 
 .summonerLabel{
+    color: $trackerWhite;
     text-align: center;
+    font-size: 2vw;
     width:100%;
+    text-shadow: 0px 0px 4px $trackerShadow;
 }
 
 .summonerInput{
-    width:60%;
+    width: 15vw;
+    height: auto;
+    font-size: 1.25vw;
+    border-radius: 0.5vw;
+    border: 0.1vw solid $trackerWhite;
+    background-color: $trackerTransluscent;
+    color: $trackerWhite;
 }
+
+.summonerInput:focus{
+    background-color: $trackerWhite;
+    border: 0.10vw solid $trackerSteelGrey;
+    outline: none;
+    color: $trackerSteelGrey;
+    box-shadow: 0px 0px 9px $trackerShadow;
+}
+
+.summonerButton{
+    font-size: 1.3vw;
+    height: 40%;
+    width: 20%;
+    background-color: $trackerTransluscent;
+    color: $trackerWhite;
+    border: 0.1vw solid $trackerWhite;
+    transition: ease-in-out 0.2s;
+    text-shadow: 0px 0px 4px $trackerShadow;
+    box-shadow: 0px 0px 4px $trackerShadow;
+}
+
+.summonerButton:hover{
+    background-color: $trackerWhite;
+    color: $trackerSteelGrey;
+    border: 0.1vw solid $trackerSteelGrey;
+    transform: scale(1.2);
+}
+
+@keyframes fadeInScaleIn{
+    from{
+        opacity: 0;
+        transform: scale(1.4);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
