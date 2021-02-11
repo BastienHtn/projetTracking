@@ -1,0 +1,18 @@
+@import "../../stylings/_colors.scss";
+
+.headerContainer{
+    height: 93vh;
+    background-image: url("../../assets/images/KDAcombined.jpeg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchCard{
+    background-color: $trackerGreyGlass;
+    width:40vw;
+    height:20vw;
+    border-radius: 1vw;
+    box-shadow: 0px 0px 9px $trackerShadow;
+    backdrop-filter: blur(2px);
+}
