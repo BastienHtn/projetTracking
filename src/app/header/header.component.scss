@@ -3,6 +3,8 @@
 .headerContainer{
     height: 93vh;
     background-image: url("../../assets/images/KDAcombined.jpeg");
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,4 +17,38 @@
     border-radius: 1vw;
     box-shadow: 0px 0px 9px $trackerShadow;
     backdrop-filter: blur(2px);
+}
+
+.labelContainer{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.inputContainer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContainer{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summonerLabel{
+    text-align: center;
+    width:100%;
+}
+
+.summonerInput{
+    width:60%;
 }
