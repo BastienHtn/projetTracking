@@ -81,6 +81,7 @@ video{
     border: 0.1vw solid $trackerWhite;
     background-color: $trackerTransluscent;
     color: $trackerWhite;
+    padding: 0 0.5vw;
 }
 
 .summonerInput:focus{
@@ -89,6 +90,15 @@ video{
     outline: none;
     color: $trackerSteelGrey;
     box-shadow: 0px 0px 9px $trackerShadow;
+    
+}
+
+.summonerInput:focus:hover{
+    background-color: $trackerWhite;
+}
+
+.summonerInput:hover{
+    background-color: $trackerWhiteGlass;
 }
 
 .summonerButton{
