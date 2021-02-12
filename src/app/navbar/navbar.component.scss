@@ -45,6 +45,16 @@
     font-size: 1.3vw;
     margin:5% 0;
     color: $trackerWhite;
+    background: linear-gradient(to right, $trackerWhite 50%, $trackerTransluscent 50%);
+    background-size: 200% 100%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+    cursor: pointer;
+}
+
+.sidebarLink:hover{
+    background-position: bottom left;
+    color: $trackerBlack;
 }
 
 .sideBarArrowContainer{
@@ -73,5 +83,9 @@
 .rotateArrow{
     // transform: rotate(180deg);
     transform: scale(-1, 1);
+}
+
+.sideBarHover{
+    left: -12vw;
 }
 

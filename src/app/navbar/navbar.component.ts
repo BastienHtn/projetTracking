@@ -10,6 +10,7 @@ import { IonIcon } from '../../../node_modules/ionicons/components/ion-icon';
 export class NavbarComponent implements OnInit {
 
   sideBar = false;
+  sideBarHover = false;
 
   constructor() { }
 
@@ -21,6 +22,14 @@ export class NavbarComponent implements OnInit {
       this.sideBar = true;
     }else{
       this.sideBar = false;
+    }
+  }
+
+  hoverSideBar(){
+    if(this.sideBarHover == false){
+      this.sideBarHover = true;
+    }else{
+      this.sideBarHover = false;
     }
   }
 

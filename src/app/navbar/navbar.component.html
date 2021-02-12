@@ -1,11 +1,11 @@
-<div class="sidebarContainer" [ngClass]="{'showSideBar' : sideBar == true}">
+<div class="sidebarContainer" [ngClass]="{'showSideBar' : sideBar == true, 'sideBarHover' : sideBarHover == true }">
     <div class="navbarContainer">
         <div class="sideBarTextContainer">
             <div class="sidebarLink">Home</div>
             <div class="sidebarLink">Champions Stats</div>
         </div>
     </div>
-    <div class="sideBarArrowContainer" [ngClass]="{'rotateArrow' : sideBar == true}">
+    <div class="sideBarArrowContainer" (mouseover)="hoverSideBar()" (mouseout)="hoverSideBar()"  [ngClass]="{'rotateArrow' : sideBar == true}">
         <ion-icon id="sideBarButton" (click)="openSideBar()" name="chevron-forward-outline"></ion-icon>
     </div>
 </div>
