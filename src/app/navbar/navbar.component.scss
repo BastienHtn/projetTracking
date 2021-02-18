@@ -30,9 +30,10 @@
 .sidebarContainer{
     display: flex;
     flex-direction: row;
-    position: absolute;
+    position: fixed;
     left:-13vw;
     transition: ease-in-out 0.5s;
+    z-index: 2;
 }
 
 .showSideBar{
@@ -50,6 +51,7 @@
     background-position: bottom right;
     transition: all .3s ease-out;
     cursor: pointer;
+    text-decoration-line: none;
 }
 
 .sidebarLink:hover{
