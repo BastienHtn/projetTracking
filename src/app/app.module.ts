@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,6 +10,8 @@ import { ChampionStatsComponent } from './champion-stats/champion-stats.componen
 import { ChampionsWinratesComponent } from './champions-winrates/champions-winrates.component';
 import { ChampionsWikiComponent } from './champions-wiki/champions-wiki.component';
 import { ChampionsInfosComponent } from './champions-infos/champions-infos.component';
+import { SummonerStatsComponent } from './summoner-stats/summoner-stats.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,14 @@ import { ChampionsInfosComponent } from './champions-infos/champions-infos.compo
     ChampionStatsComponent,
     ChampionsWinratesComponent,
     ChampionsWikiComponent,
-    ChampionsInfosComponent
+    ChampionsInfosComponent,
+    SummonerStatsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

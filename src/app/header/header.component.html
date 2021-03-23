@@ -3,14 +3,16 @@
         <source id="video" src="../../assets/videos/kdaPopStarsHD.mp4" type="video/mp4">
     </video>
     <div class="searchCard">
-        <div class="labelContainer">
-            <label class="summonerLabel" for="summonerInput">Summoner Name</label>
-        </div>
-        <div class="inputContainer">
-            <input type="text" class="summonerInput">
-        </div>
-        <div class="buttonContainer">
-            <button type="button" class="summonerButton">Track</button>
-        </div>
+        <form #summonerForm="ngForm" (ngSubmit)="getSummonerInfos()">
+            <div class="labelContainer">
+                <label class="summonerLabel" for="summonerInput">Summoner Name</label>
+            </div>
+            <div class="inputContainer">
+                <input type="text" class="summonerInput" required name="summName" [(ngModel)]="summName" #name="ngModel">
+            </div>
+            <div class="buttonContainer">
+                <button type="submit" class="summonerButton">Track</button>
+            </div>
+        </form>
     </div>
 </div>

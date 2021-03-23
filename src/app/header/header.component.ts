@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  summName: string;
 
 
-  constructor() { }
+  constructor(
+    private ActivatedRoute: ActivatedRoute,
+    private route:Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  getSummonerInfos(){
+    this.route.navigate(['./summonerStats/' + this.summName]);
   }
 
 }

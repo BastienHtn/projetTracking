@@ -24,7 +24,6 @@
     "jquery": "^3.5.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "twisted": "^1.35.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
