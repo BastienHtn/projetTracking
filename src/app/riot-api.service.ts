@@ -14,7 +14,7 @@ import { promise } from 'selenium-webdriver';
   providedIn: 'root'
 })
 export class RiotApiService {
-  private apiKey = "RGAPI-4c4cb72b-7d6b-4358-ae53-339b4e8b3ae2";
+  private apiKey = "RGAPI-d6508dc7-fc27-4f0c-bc1c-3d54cb6d8b17";
 
   //GLOBAL SUMMONER SEARCH RESULTS
   summoner: SummonerDTO;
