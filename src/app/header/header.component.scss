@@ -120,6 +120,10 @@ video{
     transform: scale(1.2);
 }
 
+.formHeader{
+    height: 100%;
+}
+
 @keyframes fadeInScaleIn{
     from{
         opacity: 0;
