@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ChampionDTO } from '../_json/champion';
 import * as Champions from '../../assets/dataDragon/11.6.1/data/fr_FR/champion.json';
 import { RiotApiService } from '../riot-api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { retry } from 'rxjs/operators';
+=======
+>>>>>>> dc3e64a5045a722470e18d03e616de5962cf6afd
 
 @Component({
   selector: 'app-champions-wiki',
@@ -15,11 +18,15 @@ export class ChampionsWikiComponent implements OnInit {
   arrayListChampions: Array<ChampionDTO> = [];
   isDataObtained: boolean = false;
 
+<<<<<<< HEAD
   constructor(
     public route: ActivatedRoute,
     public riotApiService: RiotApiService,
     public router: Router
   ) {
+=======
+  constructor() {
+>>>>>>> dc3e64a5045a722470e18d03e616de5962cf6afd
    }
   
 
@@ -36,8 +43,11 @@ export class ChampionsWikiComponent implements OnInit {
     console.log("Erreur d'implementation de liste");
   }
 
+<<<<<<< HEAD
   }
 
+=======
+>>>>>>> dc3e64a5045a722470e18d03e616de5962cf6afd
   
 
 }
