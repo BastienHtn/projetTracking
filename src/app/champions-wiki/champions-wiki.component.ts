@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LolApi, Constants } from 'twisted';
+import { ChampionDTO } from '../_json/champion';
+import * as Champions from '../../assets/dataDragon/11.6.1/data/fr_FR/champion.json';
+import { RiotApiService } from '../riot-api.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-champions-wiki',
@@ -7,18 +11,31 @@ import { LolApi, Constants } from 'twisted';
   styleUrls: ['./champions-wiki.component.scss']
 })
 export class ChampionsWikiComponent implements OnInit {
+  listChampions = Champions.data;
+  arrayListChampions: Array<ChampionDTO> = [];
+  isDataObtained: boolean = false;
 
-  constructor() {
-    const api = new LolApi()
+  constructor(
+    public route: ActivatedRoute,
+    public riotApiService: RiotApiService,
+    public router: Router
+  ) {
    }
   
 
-  ngOnInit(): void {
+  ngOnInit() {
+  
+  try{
+    for(var i in this.listChampions){
+      this.arrayListChampions.push(this.listChampions[i]);
+    }
     
+    this.isDataObtained = true;
+  }catch{
+    this.isDataObtained = false;
+    console.log("Erreur d'implementation de liste");
   }
 
-  summonerByNameExample () {
-    return await api.Summoner.getByName('Hide on bush', Constants.Regions.KOREA)
   }
 
   

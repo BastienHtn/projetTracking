@@ -1,0 +1,19 @@
+<div class="dataContainer" *ngIf="isSummonerComplete == true && isMasteriesComplete == true">
+    <div class="summonerContainer">
+        <div class="summonerName" [innerHTML]="summoner.name"></div>
+        <div class="summonerLevel" [innerHTML]="summoner.summonerLevel"></div>
+        <div class="summonerIconId">
+            <img src="../../assets/dataDragon/11.6.1/img/profileicon/{{summoner.profileIconId}}.png">
+        </div>
+    </div>
+
+    <div class="bestMasteries">
+        <div class="masteries1" [innerHTML]="firstChampionObject.id"></div>
+        <img class="masteries1img" src="../../assets/dataDragon/11.6.1/img/champion/{{firstChampionObject.image.full}}">
+        <div class="masteries2" [innerHTML]="secondChampionObject.id"></div>
+        <img class="masteries2img" src="../../assets/dataDragon/11.6.1/img/champion/{{secondChampionObject.image.full}}">
+        <div class="masteries3" [innerHTML]="thirdChampionObject.id"></div>
+        <img class="masteries3img" src="../../assets/dataDragon/11.6.1/img/champion/{{thirdChampionObject.image.full}}">
+    </div>
+</div>
+

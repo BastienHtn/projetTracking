@@ -1,9 +1,10 @@
 <div class="sidebarContainer" [ngClass]="{'showSideBar' : sideBar == true, 'sideBarHover' : sideBarHover == true }">
     <div class="navbarContainer">
         <div class="sideBarTextContainer">
-            <a class="sidebarLink" routerLink="../home">Home</a>
-            <a class="sidebarLink" routerLink="../championsInfos">Champions Wiki</a>
-            <a class="sidebarLink" routerLink="../championStats">Champions Winrates</a>
+            <a class="sidebarLink" routerLink="home">Home</a>
+            <a class="sidebarLink" routerLink="championsInfos">Champions Wiki</a>
+            <a class="sidebarLink" routerLink="championStats">Champions Winrates</a>
+            <a class="sidebarLink" routerLink="summonerStats/FrozeTilt">test</a>
         </div>
     </div>
     <div class="sideBarArrowContainer" (mouseover)="hoverSideBar()" (mouseout)="hoverSideBar()"  [ngClass]="{'rotateArrow' : sideBar == true}">
