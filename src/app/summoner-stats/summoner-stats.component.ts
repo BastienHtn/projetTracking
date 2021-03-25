@@ -4,12 +4,9 @@ import { RiotApiService } from '../riot-api.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
 import { SummonerDTO } from '../_json/summoner';
-<<<<<<< HEAD
 import { ChampionMasteryDTO } from '../_json/championMastery';
 import { ChampionDTO } from '../_json/champion';
 import * as Champions from '../../assets/dataDragon/11.6.1/data/fr_FR/champion.json';
-=======
->>>>>>> dc3e64a5045a722470e18d03e616de5962cf6afd
 
 @Component({
   selector: 'app-summoner-stats',
@@ -17,7 +14,6 @@ import * as Champions from '../../assets/dataDragon/11.6.1/data/fr_FR/champion.j
   styleUrls: ['./summoner-stats.component.scss']
 })
 export class SummonerStatsComponent implements OnInit {
-<<<<<<< HEAD
 
   //RIOT REQUESTS RESULTS
   summoner: SummonerDTO;
@@ -33,10 +29,6 @@ export class SummonerStatsComponent implements OnInit {
   //RIOT REQUESTS VALIDATORS
   isSummonerComplete = false;
   isMasteriesComplete = false;
-=======
-  summoner: SummonerDTO;
-  protected destroy$: Subject<void> = new Subject<void>();
->>>>>>> dc3e64a5045a722470e18d03e616de5962cf6afd
 
   constructor(
     public route: ActivatedRoute,
@@ -46,7 +38,6 @@ export class SummonerStatsComponent implements OnInit {
 
   ngOnInit(): void {
     const summonerName = this.route.snapshot.paramMap.get('summonername');
-<<<<<<< HEAD
 
 
     this.riotApiService.getSummonerInfos(summonerName).pipe().subscribe(res => 
@@ -83,13 +74,6 @@ export class SummonerStatsComponent implements OnInit {
     }
 
     this.isMasteriesComplete = true;
-=======
-    this.riotApiService.getSummonerInfos(summonerName).pipe().subscribe(res => {
-      if (res) {this.summoner = res}
-    });
-  }
-  ngAfterViewInit(){
->>>>>>> dc3e64a5045a722470e18d03e616de5962cf6afd
   }
   
 
