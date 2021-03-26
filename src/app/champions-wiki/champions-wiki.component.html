@@ -1,7 +1,13 @@
-<div *ngIf="isDataObtained">
-    <div *ngFor="let champion of arrayListChampions; index as i;">
-        <img src="../../assets/dataDragon/11.6.1/img/champion/{{champion.image.full}}">
-        <span>{{champion.id}}</span>
+<div class="championsWikiContainer">
+    <div class="championsContainer" *ngIf="isDataObtained">
+        <div *ngFor="let champion of arrayListChampions; index as i;" class="championCard">
+            <div class="imageWrapper">
+                <img class="championImg img{{champion.id}}" src="../../assets/dataDragon/img/champion/splash/{{champion.id}}_0.jpg">
+            </div>
+            <div class="nameWrapper">
+                <span>{{champion.id}}</span>
+            </div>
+        </div>
     </div>
 </div>
 
