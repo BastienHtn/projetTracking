@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChampionDTO } from '../_json/champion';
 import * as Champions from '../../assets/dataDragon/11.6.1/data/fr_FR/champion.json';
+import * as ChampionsFull from '../../assets/dataDragon/11.6.1/data/fr_FR/championFull.json';
 import { RiotApiService } from '../riot-api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { retry } from 'rxjs/operators';
@@ -13,8 +14,11 @@ import { retry } from 'rxjs/operators';
 })
 export class ChampionsWikiComponent implements OnInit {
   listChampions = Champions.data;
+  listChampionsFull = ChampionsFull.data;
   arrayListChampions: Array<ChampionDTO> = [];
   isDataObtained: boolean = false;
+  selectedChampion: ChampionDTO;
+  selectedChampionSkins = [];
 
   constructor(
     public route: ActivatedRoute,
@@ -34,6 +38,15 @@ export class ChampionsWikiComponent implements OnInit {
       this.isDataObtained = false;
       console.log("Erreur d'implementation de liste");
     }
+  }
+
+  selectChampion(championId){
+    this.selectedChampion = this.listChampionsFull[championId];
+    this.selectedChampionSkins = [];
+    for(var i in this.listChampionsFull[championId].skins){
+      this.selectedChampionSkins.push(this.listChampionsFull[championId].skins[i].num);
+    }
+    
   }
   
 

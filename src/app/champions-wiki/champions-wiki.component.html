@@ -1,13 +1,35 @@
 <div class="championsWikiContainer">
     <div class="championsContainer" *ngIf="isDataObtained">
-        <div *ngFor="let champion of arrayListChampions; index as i;" class="championCard">
-            <div class="imageWrapper">
+        <div *ngFor="let champion of arrayListChampions; index as i;" class="championCard" [ngClass]="{'championCardSelected': selectedChampion  &&  selectedChampion.id == champion.id}" (click)="selectChampion(champion.id)">
+            <div class="contentWrapper">
                 <img class="championImg img{{champion.id}}" src="../../assets/dataDragon/img/champion/splash/{{champion.id}}_0.jpg">
             </div>
-            <div class="nameWrapper">
-                <span>{{champion.id}}</span>
+            <div class="textWrapper">
+                <span class="championName name{{champion.id}}">{{champion.name}}</span>
             </div>
         </div>
     </div>
+
+    <div class="splashContainer">
+        <div class="splashContent" *ngIf="selectedChampion">
+            <div class="champDetailsName" [innerHTML]="selectedChampion.name"></div>
+            <div class="champDetailsTitle" [innerHTML]="selectedChampion.title"></div>
+            <div class="champDetailsLore" [innerHTML]="selectedChampion.lore"></div>
+            <div class="skinsContainer">
+                <img *ngFor="let skin of selectedChampionSkins; index as i;" class="skinImageFile" src="../../assets/dataDragon/img/champion/splash/{{selectedChampion.id}}_{{skin}}.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="detailsContainer">
+        <div class="detailsContent">
+            Test
+        </div>
+    </div>
+</div>
+
+<div class="bgImageContainer">
+    <img class="bgImage" src="../../assets/images/KDAcombined.jpeg" *ngIf="!selectedChampion">
+    <img class="bgImage" src="../../assets/dataDragon/img/champion/splash/{{selectedChampion.id}}_0.jpg" *ngIf="selectedChampion">
 </div>
 

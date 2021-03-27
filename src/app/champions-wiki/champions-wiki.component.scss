@@ -6,11 +6,13 @@
     background-color: $trackerDarkGrey;
     color: $trackerWhite;
     font-family: "Public Sans Bold";
+    display: flex;
+    
     .championsContainer{
         text-align: center;
         display: flex;
         flex-wrap: wrap;
-        width: 40vw;
+        width: 30vw;
         height: 100vh;
         justify-content: center;
         overflow-y: scroll;
@@ -18,17 +20,44 @@
         scrollbar-width: none;
         margin-left: 5vw;
         padding: 3vh 1vw;
-
+        z-index: 1;
         .championCard{
-            margin: 0 1vw;
-            width: 100%;
-            height: 18%;
-            background-color: darkcyan;
+            cursor: pointer;
+            transition: 0.5s ease;
+            height: 15.6vh;
             overflow: hidden;
-            clip-path: polygon(0% 70%, 100% 100%, 100% 30%, 0% 0%);
-            .imageWrapper{
+            clip-path: polygon(0% 80%, 100% 100%, 100% 20%, 0% 0%);
+            filter: grayscale(70%);
+            .textWrapper{
+                transition: 0.5s ease;
+                display: flex;
+                font-size: 2vw;
+                position: relative;
+                z-index: 2;
+                top: -100%;
+                height: 100%;
+                justify-content: center;
+                text-align: center;
+                opacity: 0%;
+                .championName{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transform: rotate(4deg);
+                    transition: 1s ease;
+                }
+            }
+            .contentWrapper{
+                transition: 0.5s ease;
+                width: 100%;
+                height: 100%;
                 .championImg{
-                    width: 100%;
+                    position: relative;
+                    width: 30vw;
+                    object-fit: cover;
+                    align-self: baseline;
+                    z-index: 1;
+                    
                 }
                 .imgAatrox{
                     margin-top:-4%;
@@ -44,9 +73,108 @@
                 }
             }
         }
+        .championCardSelected{
+            filter: grayscale(0);
+        }
+        .championCard:hover{
+            // clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+            // margin: 1vh 0;
+            filter: grayscale(0);
+            .contentWrapper{
+                filter: blur(4px);
+                transform: scale(1.2);
+            }
+            .textWrapper{
+                opacity: 100%;
+                .championName{
+                    // transform: rotate(0deg);
+                }
+            }
+            
+        }
     }
     .championsContainer::-webkit-scrollbar{
         display: none;
+    }
+
+
+    .splashContainer{
+        width: 30vw;
+        padding-top: 6vh;
+        padding-bottom: 3vh;
+        z-index: 1;
+        .splashContent{
+            height: 100%;
+            width: 100%;
+            .champDetailsName{
+                width: 100%;
+                padding: 3vh 3vw;
+                font-size: 4vw;
+                text-align: center;
+            }
+            .champDetailsTitle{
+                width: 100%;
+                padding: 3vh 1vw;
+                font-size: 2vw;
+                text-align: center;
+                font-family: 'Public Sans Italic';
+            }
+            .champDetailsLore{
+                width: 100%;
+                padding: 1vh 2vw;
+                white-space: normal;
+                font-size: 1vw;
+                text-align: center;
+                font-family: 'Public Sans Light Italic';
+            }
+            .skinsContainer{
+                width: 100%;
+                height: 15vh;
+                margin: 3vh 0;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                background-color: gray;
+                margin-top: 5vh;
+                display: flex;
+                .skinImageFile{
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+    }
+    
+    .detailsContainer{
+        height: 100vh;
+        width: 30vw;
+        padding: 3vh 1vw;
+        z-index: 1;
+        .detailsContent{
+            background-color: darkcyan;
+            height: 100%;
+            width: 100%;
+            clip-path: polygon(0% 100%, 100% 96.5%, 100% 0%, 0% 3.5%);
+            padding: 3vh 0;
+        }
+    }
+}
+
+.bgImageContainer{
+    width:100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bgImage{
+        filter: blur(10px) brightness(40%);
+        object-fit: cover;
+        width: 200vw;
+        text-align: center;
     }
 }
 
